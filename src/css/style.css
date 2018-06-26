@@ -1,0 +1,19 @@
+.placeholder {
+    width: 100%;
+    background-color: #eee;
+    margin-bottom: 10px;
+}
+
+#loading {
+    float: left;
+    display: none;
+    position: relative;
+    bottom: 50px;
+    padding: 10px;
+    background-color: #fff9;
+}
+
+img {
+    width: 100%;
+    margin-bottom: 10px;
+}

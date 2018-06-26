@@ -1,14 +1,15 @@
 const url = "https://cors.io/?http://shibe.online/api/shibes?count=24";
 const target = document.getElementById("shibes");
 const loading = document.getElementById("loading");
-const placeholder = document.getElementsByClassName("placeholder");
 
 // random heights for the placeholder images
-for(let p of placeholder){
+for(let p of document.getElementsByClassName("placeholder")){
     p.style.height = `${Math.random()*200+200>>0}px`;
 }
 
+// store the image url in a 3 column grid
 let imagegrid = [[], [], []];
+// the relative height of each grid
 let heights = [0, 0, 0];
 
 function minIndex(arr){
@@ -57,12 +58,14 @@ function getShibes() {
     .then(function(shibes) {
         columnShibes(shibes, 0, function(){
             loading.style.display = "none";
+            console.log(heights);
             drawShibes();
         });
     });
 }
 getShibes();
 
+// when the user scrolls to the bottom, load more images
 window.addEventListener("scroll", function(event){
 
     let scrollHeight = Math.max(

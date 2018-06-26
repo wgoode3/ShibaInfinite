@@ -42,7 +42,7 @@ function drawShibes() {
     for(let col of imagegrid) {
         output += `<div class="col"`;
         for(let url of col) {
-            output += `<img src="${url}" alt="shibe">`;
+            output += `<img src="${url}" alt="shibe" data-toggle="modal" data-target="#imgModal">`;
         }
         output += `</div>`;
     }
@@ -60,6 +60,7 @@ function getShibes() {
             loading.style.display = "none";
             console.log(heights);
             drawShibes();
+            clickImgs()
         });
     });
 }
@@ -80,3 +81,17 @@ window.addEventListener("scroll", function(event){
     }
 
 });
+
+let imgs;
+const imgModal = document.getElementById("imgModal");
+const modalImage = document.getElementById("modalImage");
+
+function clickImgs() {
+    imgs = document.querySelectorAll('img');
+    for(let img of imgs) {
+        img.addEventListener("click", function(e) {
+            modalImage.src = e.target.src;
+            imgModal.classList.add("show");
+        });
+    }
+}

@@ -6,16 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shibes</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="src/css/style.css">
 </head>
 <body>
 
     <div class="container">
         
+        <!-- Website greeting -->
         <div class="jumbotron">
             <h1>Shiba Infinite</h1>
         </div>
 
+        <!-- 3 columns of images -->
         <div id="shibes">
             <div class="row">
                 <div class="col">
@@ -51,10 +56,19 @@
             </div>
         </div>
 
-        <div class="alert alert-info" id="loading">
-            Loading shibes... please be patient!
-        </div>
+    </div>
 
+    <!-- modal to expand image -->
+    <div class="modal fade" id="imgModal">
+        <div class="modal-dialog">
+            <button class="btn btn-primary right" data-dismiss="modal">Close</button>
+        </div>
+        <img src="" alt="modal image" id="modalImage">
+    </div>
+
+    <!-- loading message -->
+    <div class="alert alert-info" id="loading">
+        Loading shibes... please be patient!
     </div>
 
     <script type="text/javascript" src="src/js/shibe.js"></script>

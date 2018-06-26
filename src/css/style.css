@@ -1,6 +1,7 @@
 .col * {
     width: 100%;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .placeholder {
@@ -8,6 +9,14 @@
 }
 
 #loading {
+    width: 400px;
     position: fixed;
     bottom: 0px;
+    left: calc(50% - 200px);
+}
+
+#modalImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
